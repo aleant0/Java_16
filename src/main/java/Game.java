@@ -10,15 +10,7 @@ public class Game {
     }
 
     public int round(String playerName1, String playerName2) {
-        int reg = 0;
-
-        if (playersMap.containsKey(playerName1)) {
-            reg++;
-        }
-        if (playersMap.containsKey(playerName2)) {
-            reg++;
-        }
-        if (reg < 2) {
+        if (!playersMap.containsKey(playerName1) | !playersMap.containsKey(playerName2)) {
             throw new NotRegisteredException(
                     "Player not registered"
             );
